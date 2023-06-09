@@ -263,7 +263,7 @@ uint32_t DpdkTransport::get_port_ipv4_addr(size_t phy_port) {
   // Extract the second line
   const std::vector<std::string> ip_lines =
       ipconfig_helper_split(ipconfig_out, '\n');
-  rt_assert(ip_lines.size() == 2,
+  rt_assert(ip_lines.size() >= 2,
             "Failed to split ipconfig.exe output into two lines");
 
   // ip_lines[1] is the string (ex):
